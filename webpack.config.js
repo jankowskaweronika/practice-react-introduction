@@ -14,31 +14,30 @@ module.exports = {
         filename: 'app.min.js',
         // definiuję nazwę pliku wyjściowego
     },
-    target: "web", 
+    target: 'web',
     // niezbędne do uruchomienia automatycznego odświeżania z webpack-dev-server@3
     // https://github.com/webpack/webpack-dev-server/issues/2758
     module: {
         rules: [
             {
                 test: /\.js$/,
-                // określam jakie pliki 
+                // określam jakie pliki
                 // będą brane pod uwagę
                 exclude: /node_modules/,
                 // określam wykluczenia
                 use: 'babel-loader',
                 // określam jaki [loader]
                 // ma być wykorzystany
-            }
-        ]
+            },
+        ],
         // obecnie brak dodatkowych ustawień
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: `./${taskNumber}/index.html`,
             // wskazuje plik źródłowy
-            filename: 'index.html'
+            filename: 'index.html',
             // określam nazwę dla pliku
-        })
-    ]
-}
-// eksportuję ustawienia dla webpack-a
+        }),
+    ],
+};
